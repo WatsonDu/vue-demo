@@ -1,9 +1,10 @@
 <template>
-<div id = "topbar">
+<div id ="topbar">
 VueResumer
 <div class="actions">
-<button>注册</button>
-<button>登录</button>
+<el-button type = "primary">注册</el-button>
+<el-button>登录</el-button>
+<el-button v-on:click="preview">预览</el-button>
 </div>
 </div>
 </template>
@@ -11,6 +12,16 @@ VueResumer
 #topbar{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px;
 }
 </style>
+<script>
+export default{
+   methods:{
+      preview(){
+        this.$emit('preview')
+      }
+   }
+}
+</script>
